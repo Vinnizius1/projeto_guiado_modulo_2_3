@@ -9,8 +9,8 @@ E como seu atributo "type" ficou igual a "tel", então, na regra do @media (form
 
 * [Link para a página](https://vinnizius1.github.io/projeto_guiado-modulo_2/form.html)  
 
-![](img-readme/Screenshot.png)  
+![](assets/img-readme/Screenshot.png)  
 
-![](img-readme/Screenshot2.png)
+![](assets/img-readme/Screenshot2.png)
 
 ### Bóra evoluir! 🚀:books: 	:man_technologist:  :raised_hands:  
