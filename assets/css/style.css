@@ -1,0 +1,28 @@
+body {
+  margin: 0px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.cabecalho {
+  background: linear-gradient(380deg, transparent, #1c44bf);
+  padding: 15px;
+}
+
+.cabecalho img {
+  max-width: 200px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu a {
+  text-decoration: none;
+  font-weight: bold;
+  color: blue;
+  margin: 15px;
+  border: solid 1px blue;
+  padding: 5px;
+}

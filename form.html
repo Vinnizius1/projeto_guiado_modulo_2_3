@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto guiado - módulo 2</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/form.css" />
+  </head>
+
+  <body>
+    <header class="cabecalho">
+      <img src="./assets/img/logo-colorido@2x.png" />
+    </header>
+
+    <div class="menu">
+      <a href="./index.html"> Listagem </a>
+      <a href="./form.html"> Cadastrar </a>
+    </div>
+    <section>
+      <form class="formulario">
+        <div class="linha-formulario">
+          <label class="label-grande" for="name">Nome:</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+        <div class="linha-formulario">
+          <label class="label-grande" for="phone">Telefone:</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            pattern="[0-9]{2}-[0-9]{9}"
+            required
+          />
+          <small>Formato: 62-999999999</small>
+        </div>
+
+        <div class="linha-formulario xp-line" style="display: flex">
+          <label class="label-grande">Experiência prévia:</label>
+          <div>
+            <input id="xp-yes" name="xp" type="radio" />
+            <label for="xp-yes">Sim</label>
+            <br />
+            <input id="xp-no" name="xp" type="radio" />
+            <label for="xp-no">Não</label>
+          </div>
+        </div>
+
+        <input type="submit" value="Salvar" />
+      </form>
+    </section>
+  </body>
+</html>
