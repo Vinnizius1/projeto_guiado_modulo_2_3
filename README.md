@@ -7,8 +7,6 @@ No input "telefone" (form.html), adicionei o atributo "pattern" para incluir um 
 E como seu atributo "type" ficou igual a "tel", então, na regra do @media (form.css), aprendi que para poder adicionar 2 tipos de "type" dentro de 
 ".formulario input...", preciso separá-los por vírgula, assim: [type="..."], [type="..."].  
 
-Enfim, um simples formulário que deu trabalho e bons aprendizados! kkk  
-
 * [Link para a página](https://vinnizius1.github.io/projeto_guiado-modulo_2/form.html)  
 
 ![](img-readme/Screenshot.png)  
