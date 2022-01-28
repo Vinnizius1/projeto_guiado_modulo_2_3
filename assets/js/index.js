@@ -1,32 +1,33 @@
-let peopleRaw;
+/*  Variáveis GLOBAIS  */
 let people;
+let peopleRaw;
 
+/*  Retorno do objeto especificado "people"  */
 peopleRaw = localStorage.getItem("people");
+
+/*  Se o Retorno anterior obteve dados, eles serão convertidos em Objeto (.parse) e atribuídos a variável "people"  */
 if (peopleRaw != null) {
   people = JSON.parse(peopleRaw);
 } else {
   people = [];
 }
 
-// Função PRINCIPAL
+/*   Função PRINCIPAL   */
 function desenhaTabela() {
-  var currentLines = [
-    ...document.querySelectorAll("table.lista tbody .dynamic-content"),
-  ];
+
+  // A classe "dynamic-content" está especificamente na linha (tr), ou seja, pegará todas suas colunas (td) filhas.
+  let currentLines = [...document.querySelectorAll("table.lista tbody .dynamic-content")];
   currentLines.forEach((element) => {
     element.remove();
   });
 
+  // "for loop" escreverá cada "person" (pelo index no array) com seus detalhes do Objeto "people" no HTML (innerHTML).
   for (person in people) {
-    document.querySelector(
-      "table.lista tbody"
-    ).innerHTML += `<tr class="dynamic-content" style="background-color: ${
-      person % 2 == 0 ? "#fff" : "#eee"
-    } ">
+    document.querySelector("table.lista tbody").innerHTML += 
+    `<tr class="dynamic-content" style="background-color: ${person % 2 == 0 ? "#fff" : "#eee"} ">
         <td>${people[person].name}</td>
         <td>${people[person].tel}</td>
-        <td>${
-          people[person].xp
+        <td>${people[person].xp
             ? "<strong style='color: green'>Sim</strong>"
             : "<strong style='color: red'>Não</strong>"
         }</td>
@@ -37,9 +38,15 @@ function desenhaTabela() {
   }
 }
 
+/*  Função DELETAR */
 function deleteUser(p) {
+  // Na posição "p" removerá APENAS o próprio elemento, ou seja, "1".
   people.splice(p, 1);
+
+  // Desenhará a Tabela novamente de acordo com os elementos que sobraram no Local Storage após o método "remove()"
   desenhaTabela();
+
+  // "setItem" definirá o valor do item objeto de armazenamento especificado.
   localStorage.setItem("people", JSON.stringify(people));
 }
 
