@@ -1,58 +1,55 @@
-/*  Variáveis GLOBAIS  */
+/* Declaração das variáveis GLOBAIS */
 let people;
 let peopleRaw;
 
-/*  Retorno do objeto especificado "people"  */
+// Retorno do - objeto especificado - 'people':
 peopleRaw = localStorage.getItem("people");
 
-/*  Se o Retorno anterior obteve dados, eles serão convertidos em Objeto (.parse) e atribuídos a variável "people"  */
+// Se o Retorno desse 'peopleRaw' obteve dados, eles serão convertidos em objeto via '.parse' e  então atribuídos à 
+// variável PEOPLE:
 if (peopleRaw != null) {
   people = JSON.parse(peopleRaw);
 } else {
   people = [];
 }
 
-/*   Função PRINCIPAL   */
+/* Função PRINCIPAL */
 function desenhaTabela() {
-
-  // A classe "dynamic-content" está especificamente na linha (tr), ou seja, pegará todas suas colunas (td) filhas.
+  // A classe 'dynamic-content' está especificamente na tag linha 'tr', então pegará todas suas tags filhas 'td': 
   let currentLines = [...document.querySelectorAll("table.lista tbody .dynamic-content")];
   currentLines.forEach((element) => {
     element.remove();
   });
-
-  // "for loop" escreverá cada "person" (pelo index no array) com seus detalhes do Objeto "people" no HTML (innerHTML).
+  // O 'for loop' escreverá cada objeto, pelo INDEX do array, com seus detalhes no HTML por meio do 'innerHTML':
   for (person in people) {
     document.querySelector("table.lista tbody").innerHTML += 
-    `<tr class="dynamic-content" style="background-color: ${person % 2 == 0 ? "#fff" : "#eee"} ">
+    `
+      <tr class="dynamic-content" style="background-color: ${person % 2 == 0 ? "#fff" : "#eee"} ">
         <td>${people[person].name}</td>
         <td>${people[person].tel}</td>
-        <td>${people[person].xp
-            ? "<strong style='color: green'>Sim</strong>"
-            : "<strong style='color: red'>Não</strong>"
-        }</td>
+        <td>${people[person].xp ? "<strong style='color: green'>Sim</strong>" : "<strong style='color: red'>Não</strong>"}</td>
         <td>
-            <button onclick="deleteUser(${person})">Excluir</button>
+          <button onclick="deleteUser(${person})">Excluir</button>
         </td>
-    </tr>`;
+      </tr>
+    `;
   }
 }
 
 /*  Função DELETAR */
 function deleteUser(p) {
-  // Na posição "p" removerá APENAS o próprio elemento, ou seja, "1".
+  // O SPLICE na posição 'p' removerá apenas o próprio elemento:
   people.splice(p, 1);
-
-  // Desenhará a Tabela novamente de acordo com os elementos que sobraram no Local Storage após o método "remove()"
+  // Esta função desenhará a Tabela novamente de acordo com os elementos que sobraram no Local Storage após o método 'remove()':
   desenhaTabela();
-
-  // "setItem" definirá o valor do item objeto de armazenamento especificado.
+  // Este 'setItem' definirá o valor do item objeto que será armazenado:
   localStorage.setItem("people", JSON.stringify(people));
 }
 
 desenhaTabela();
 
-/* let people = [
+/* Dados do EXEMPLO:
+  let people = [
     {
       name: "Vinicius Matos de Mendonça",
       tel: "+55 (62) 88888-8888",
@@ -73,4 +70,5 @@ desenhaTabela();
       tel: "+35 (61) 99999-8888",
       xp: true,
     },
-  ]; */
+  ]; 
+*/
