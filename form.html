@@ -17,8 +17,8 @@
       <a href="./form.html"> Cadastrar </a>
     </div>
 
-    <section>
-      <form class="formulario">
+    <section>                                      <!-- (event) é um parâmetro padrão -->
+      <form class="formulario" onsubmit="testaFormulario(event)">
         <div class="linha-formulario">
           <label class="label-grande" for="name">Nome:</label>
           <input id="name" name="name" type="text" required />
@@ -50,5 +50,6 @@
         <input type="submit" value="Salvar" />
       </form>
     </section>
+    <script src="./assets/js/form.js"></script>
   </body>
 </html>

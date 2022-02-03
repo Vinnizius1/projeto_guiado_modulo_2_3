@@ -2,7 +2,7 @@
 let people;
 let peopleRaw;
 
-// Retorno do - objeto especificado - 'people':
+// Retorno do objeto especificado 'people' (poderia ser qualquer outro nome):
 peopleRaw = localStorage.getItem("people");
 
 // Se o Retorno desse 'peopleRaw' obteve dados, eles serão convertidos em objeto via '.parse' e  então atribuídos à 
@@ -17,7 +17,7 @@ if (peopleRaw != null) {
 function desenhaTabela() {
   // A classe 'dynamic-content' está especificamente na tag linha 'tr', então pegará todas suas tags filhas 'td': 
   let currentLines = [...document.querySelectorAll("table.lista tbody .dynamic-content")];
-  currentLines.forEach((element) => {
+  currentLines.forEach(element => {
     element.remove();
   });
   // O 'for loop' escreverá cada objeto, pelo INDEX do array, com seus detalhes no HTML por meio do 'innerHTML':
@@ -38,7 +38,7 @@ function desenhaTabela() {
 }
 
 /*  Função DELETAR */
-function deleteUser(p) {
+function deleteUser(p) { 
   // O SPLICE na posição 'p' removerá apenas o próprio elemento:
   people.splice(p, 1);
   // Esta função desenhará a Tabela novamente de acordo com os elementos que sobraram no Local Storage após o método 'remove()':
