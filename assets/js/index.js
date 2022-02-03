@@ -22,9 +22,10 @@ function desenhaTabela() {
   });
   // O 'for loop' escreverá cada objeto, pelo INDEX do array, com seus detalhes no HTML por meio do 'innerHTML':
   for (person in people) {
+    // console.log(person) -> resultado: 0 1 2 3
     document.querySelector("table.lista tbody").innerHTML += 
     `
-      <tr class="dynamic-content" style="background-color: ${person % 2 == 0 ? "#fff" : "#eee"} ">
+      <tr class="dynamic-content" style="background-color: ${person % 2 == 0 ? "#fff" : "#eee"}">
         <td>${people[person].name}</td>
         <td>${people[person].tel}</td>
         <td>${people[person].xp ? "<strong style='color: green'>Sim</strong>" : "<strong style='color: red'>Não</strong>"}</td>
