@@ -5,7 +5,7 @@ let peopleRaw;
 // Retorno do objeto especificado 'people' (poderia ser qualquer outro nome):
 peopleRaw = localStorage.getItem("people");
 
-// Se o Retorno desse 'peopleRaw' obteve dados, eles serão convertidos em objeto via '.parse' e  então atribuídos à 
+// Se o Retorno desse 'peopleRaw' obtiver dados, eles serão convertidos em objeto via '.parse' e  então atribuídos à 
 // variável PEOPLE:
 if (peopleRaw != null) {
   people = JSON.parse(peopleRaw);
@@ -15,7 +15,7 @@ if (peopleRaw != null) {
 
 /* Função PRINCIPAL */
 function desenhaTabela() {
-  // A classe 'dynamic-content' está especificamente na tag linha 'tr', então pegará todas suas tags filhas 'td': 
+  // A classe 'dynamic-content' está especificamente na tag 'tr', então pegará todas suas tags filhas 'td': 
   let currentLines = [...document.querySelectorAll("table.lista tbody .dynamic-content")];
   currentLines.forEach(element => {
     element.remove();
@@ -31,6 +31,7 @@ function desenhaTabela() {
         <td>${people[person].xp ? "<strong style='color: green'>Sim</strong>" : "<strong style='color: red'>Não</strong>"}</td>
         <td>
           <button onclick="deleteUser(${person})">Excluir</button>
+          <a href="./form.html?person=${person}">Editar</a>
         </td>
       </tr>
     `;
