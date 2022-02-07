@@ -1,9 +1,5 @@
-## Alguns aprendizados que obtive fazendo um pouco diferente do excelente *prof. Fernando Duro*:
-
-No style.css, diminuí o tamanho da logo Newtab setando uma "max-width" específica.  
-
-No input "telefone" (form.html), adicionei o atributo "pattern" para incluir um formato que precisa ser seguido para passar na validação do campo.  
-
+## Projeto guiado com o excelente *prof. Fernando Duro*:  
+ 
 * [Link para a página](https://projeto-guiado-newtab.netlify.app/)  
 
 ![](assets/img-readme/Screenshot.png)  
